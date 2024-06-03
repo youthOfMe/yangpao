@@ -26,6 +26,7 @@ import static com.niuma.usercenter.contant.UserContant.USER_LOGIN_STATE;
  *
  * @author wobushiXingHai
  */
+@CrossOrigin(origins = { "http://localhost:3000" })
 @RestController
 @RequestMapping("/user")
 public class UserController {

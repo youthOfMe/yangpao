@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="feat: 实现使用内存进行根据用户标签搜索用户">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuma/usercenter/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuma/usercenter/service/impl/UserServiceImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="feat: 实现使用内存进行根据用户标签搜索用户" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -212,7 +209,7 @@
       <workItem from="1714470701297" duration="69000" />
       <workItem from="1714994574176" duration="109000" />
       <workItem from="1717311505430" duration="2563000" />
-      <workItem from="1717375802980" duration="8459000" />
+      <workItem from="1717375802980" duration="8885000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 实现使用SQL进行通过标签搜索用户的接口">
       <option name="closed" value="true" />
@@ -230,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717394942414</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: 实现使用内存进行根据用户标签搜索用户">
+      <option name="closed" value="true" />
+      <created>1717395664756</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1717395664756</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
