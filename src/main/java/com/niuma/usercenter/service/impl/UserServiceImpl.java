@@ -2,8 +2,8 @@ package com.niuma.usercenter.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.niuma.usercenter.common.ErrorCode;
 import com.niuma.usercenter.exception.BusinessException;
 import com.niuma.usercenter.mapper.UserMapper;
@@ -195,12 +195,34 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
      */
     public List<User> searchUserByTags(List<String> tagNameList) {
         // 使用数据库进行查询
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        // QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         // 拼接 and 查询
-        for (String tagName : tagNameList) {
-            queryWrapper = queryWrapper.like("tags", tagName);
-        }
+        // for (String tagName : tagNameList) {
+        //     queryWrapper = queryWrapper.like("tags", tagName);
+        // }
+        // List<User> userList = userMapper.selectList(queryWrapper);
+        // return userList;
+
+        // 1. 先进行查询所有用户
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         List<User> userList = userMapper.selectList(queryWrapper);
+        // 在内存中判断是否包含要求的标签
+        Gson gson = new Gson();
+        userList = userList.stream().filter(user -> {
+            String tagStr = user.getTags();
+            // 防止空指针异常
+            if (StringUtils.isBlank(tagStr)) {
+                return false;
+            }
+            Set<String> temTagNameSet = gson.fromJson(tagStr, new TypeToken<Set<String>>() {}.getType());
+            for (String tagName : temTagNameSet) {
+                if(!temTagNameSet.contains(tagName)) {
+                    return false;
+                }
+            }
+            return true;
+        }).map(this::getSafetyUser).collect(Collectors.toList());
+
         return userList;
     }
 }
