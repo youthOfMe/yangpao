@@ -215,7 +215,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
                 return false;
             }
             Set<String> temTagNameSet = gson.fromJson(tagStr, new TypeToken<Set<String>>() {}.getType());
-            for (String tagName : temTagNameSet) {
+            for (String tagName : tagNameList) {
                 if(!temTagNameSet.contains(tagName)) {
                     return false;
                 }
