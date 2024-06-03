@@ -10,6 +10,7 @@ import com.niuma.usercenter.model.domain.request.UserLoginRequest;
 import com.niuma.usercenter.model.domain.request.UserRegsiterRequest;
 import com.niuma.usercenter.service.UserService;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -101,6 +102,20 @@ public class UserController {
         // todo 校验用户是否合法
         User user = userService.getById(userId);
         return ResultUtils.success(user);
+    }
+
+    /**
+     * 根据标签搜索用户
+     * @param tagNameList
+     * @return
+     */
+    @GetMapping("/search/tags")
+    public BaseResponse<List<User>> searchUserByTags(@RequestParam(required = false) List<String> tagNameList) {
+        if(CollectionUtils.isEmpty(tagNameList)) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        List<User> userList = userService.searchUserByTags(tagNameList);
+        return ResultUtils.success(userList);
     }
 
     @DeleteMapping("/delete")

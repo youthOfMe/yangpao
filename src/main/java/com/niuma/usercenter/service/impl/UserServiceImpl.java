@@ -190,40 +190,18 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
 
     /**
      * 根据标签搜索用户
-     * @param tagList
+     * @param tagNameList
      * @return
      */
     public List<User> searchUserByTags(List<String> tagNameList) {
-        if(CollectionUtils.isEmpty(tagNameList)) {
-            throw new BusinessException(ErrorCode.PARAMS_ERROR );
-        }
-        // QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        // // 拼接 and 查询
-        // // like %java% and like
-        // for (String tagName : tagNameList) {
-        //     queryWrapper = queryWrapper.like("tags", tagName);
-        // }
-        // List<User> userList = userMapper.selectList(queryWrapper);
-
-        // 1. 先查询所有用户
+        // 使用数据库进行查询
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        // 拼接 and 查询
+        for (String tagName : tagNameList) {
+            queryWrapper = queryWrapper.like("tags", tagName);
+        }
         List<User> userList = userMapper.selectList(queryWrapper);
-        Gson gson = new Gson();
-        // 2. 在内存中判断是否包含要求的标签
-        return userList.stream().filter((user -> {
-            String tagsStr = user.getTags();
-            Set<String> tempTagNameSet = gson.fromJson(tagsStr, new TypeToken<Set<String>>(){}.getType());
-            tempTagNameSet = Optional.ofNullable(tempTagNameSet).orElse(new HashSet<>());
-            // gson.toJson(tempTagNameList)
-            for (String tagName : tagNameList) {
-                if (!tempTagNameSet.contains(tagName)) {
-                    return false;
-                }
-            }
-            return true;
-        })).map(this::getSafetyUser).collect(Collectors.toList());
-
-        // return userList.stream().map(this::getSafetyUser).collect(Collectors.toList());
+        return userList;
     }
 }
 

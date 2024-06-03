@@ -69,10 +69,11 @@ class UserServiceTest {
     }
 
     @Test
-    public void searchUserByTags() {
+    void searchUserByTags() {
         List<String> tagNameList = Arrays.asList("java", "python");
         List<User> userList = userService.searchUserByTags(tagNameList);
         Assert.assertNotNull(userList);
     }
+
 }
 
