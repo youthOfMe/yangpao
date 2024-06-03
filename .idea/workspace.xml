@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../devlop/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="D:\devlop\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="17" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2ejPw3CjzLWwIXpiQsEMoSfWxfL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;import_schema_mapping&quot;: &quot;&lt;schema-mapping&gt;\n  &lt;databases&gt;\n    &lt;list&gt;\n      &lt;schema-mapping-item&gt;\n        &lt;source-data-source-id&gt;00b1710b-74aa-4db1-8dca-9c13895a9176&lt;/source-data-source-id&gt;\n        &lt;source-path&gt;schema/&amp;quot;sky_take_out_v&amp;quot;&lt;/source-path&gt;\n        &lt;target-data-source-id&gt;870eec70-0b15-4ae1-9b96-361e75a8c243&lt;/target-data-source-id&gt;\n        &lt;target-path&gt;schema/&amp;quot;chenhai&amp;quot;&lt;/target-path&gt;\n      &lt;/schema-mapping-item&gt;\n    &lt;/list&gt;\n  &lt;/databases&gt;\n&lt;/schema-mapping&gt;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/java项目/单体项目/用户中心/学习项目/user-center&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.niuma.usercenter.service" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.niuma.usercenter.service.impl" />
+      <recent name="com.niuma.usercenter.service" />
+      <recent name="com.niuma.usercenter.model.domain" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.UserCenterApplication">
+    <configuration name="rest-api_1 | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="UserServiceTest.searchUserByTags" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="user-center" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niuma.usercenter.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.niuma.usercenter.service" />
+      <option name="MAIN_CLASS_NAME" value="com.niuma.usercenter.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="searchUserByTags" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.userResgister" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="user-center" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niuma.usercenter.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.niuma.usercenter.service" />
+      <option name="MAIN_CLASS_NAME" value="com.niuma.usercenter.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="userResgister" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserCenterApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="user-center" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.niuma.usercenter.UserCenterApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niuma.usercenter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserCenterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="user-center" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.niuma.usercenter.UserCenterApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niuma.usercenter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.UserCenterApplication" />
+        <item itemvalue="Spring Boot.UserCenterApplication (1)" />
+        <item itemvalue="JUnit.UserServiceTest.searchUserByTags" />
+        <item itemvalue="JUnit.UserServiceTest.userResgister" />
+        <item itemvalue="HTTP Request.rest-api_1 | #1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="" />
+      <created>1689086750007</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1689086750007</updated>
+      <workItem from="1712415253154" duration="1000" />
+      <workItem from="1712415298913" duration="442000" />
+      <workItem from="1712415757478" duration="2382000" />
+      <workItem from="1712450907366" duration="27896000" />
+      <workItem from="1712552407102" duration="6705000" />
+      <workItem from="1712623455526" duration="19000" />
+      <workItem from="1712797286241" duration="2718000" />
+      <workItem from="1712883021627" duration="1804000" />
+      <workItem from="1712921866141" duration="1199000" />
+      <workItem from="1712990323983" duration="610000" />
+      <workItem from="1713058335169" duration="594000" />
+      <workItem from="1713154286941" duration="3071000" />
+      <workItem from="1713228327513" duration="940000" />
+      <workItem from="1713328515340" duration="1197000" />
+      <workItem from="1713403679971" duration="3754000" />
+      <workItem from="1713488881009" duration="5300000" />
+      <workItem from="1713577246272" duration="12376000" />
+      <workItem from="1713592597458" duration="11941000" />
+      <workItem from="1713662466571" duration="10920000" />
+      <workItem from="1713748864464" duration="6912000" />
+      <workItem from="1713877646711" duration="1293000" />
+      <workItem from="1713922059274" duration="1205000" />
+      <workItem from="1713924297249" duration="50000" />
+      <workItem from="1713924355483" duration="130000" />
+      <workItem from="1713924516434" duration="2227000" />
+      <workItem from="1713942807023" duration="1714000" />
+      <workItem from="1714009530362" duration="1206000" />
+      <workItem from="1714470701297" duration="69000" />
+      <workItem from="1714994574176" duration="109000" />
+      <workItem from="1717311505430" duration="2563000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/niuma/usercenter/controller/UserController.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/niuma/usercenter/controller/UserController.java</url>
+          <line>126</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/niuma/usercenter/service/UserServiceTest.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
