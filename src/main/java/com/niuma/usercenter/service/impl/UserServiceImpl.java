@@ -203,6 +203,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         // List<User> userList = userMapper.selectList(queryWrapper);
         // return userList;
 
+        if (CollectionUtils.isEmpty(tagNameList)) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+
         // 1. 先进行查询所有用户
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         List<User> userList = userMapper.selectList(queryWrapper);
