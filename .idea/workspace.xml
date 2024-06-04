@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="feat: 测试普通循环insert插入数据库10万条数据 耗时55秒">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/niuma/usercenter/service/InsertUsersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niuma/usercenter/service/InsertUsersTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="feat: 测试使用线程池优化循环Betch批量插入数据库10万条数据 耗时5秒" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -220,7 +217,7 @@
       <workItem from="1714994574176" duration="109000" />
       <workItem from="1717311505430" duration="2563000" />
       <workItem from="1717375802980" duration="10170000" />
-      <workItem from="1717463258055" duration="4028000" />
+      <workItem from="1717463258055" duration="4540000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 实现使用SQL进行通过标签搜索用户的接口">
       <option name="closed" value="true" />
@@ -270,7 +267,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717505185222</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: 测试循环Betch批量插入数据库10万条数据 耗时20秒">
+      <option name="closed" value="true" />
+      <created>1717505692591</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717505692591</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: 测试使用线程池优化循环Betch批量插入数据库10万条数据 耗时5秒">
+      <option name="closed" value="true" />
+      <created>1717506003975</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717506003975</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +295,9 @@
     <MESSAGE value="feat: 解决前端跨域问题" />
     <MESSAGE value="feat: 使用redis实现session分布式登录" />
     <MESSAGE value="feat: 测试普通循环insert插入数据库10万条数据 耗时55秒" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 测试普通循环insert插入数据库10万条数据 耗时55秒" />
+    <MESSAGE value="feat: 测试循环Betch批量插入数据库10万条数据 耗时20秒" />
+    <MESSAGE value="feat: 测试使用线程池优化循环Betch批量插入数据库10万条数据 耗时5秒" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 测试使用线程池优化循环Betch批量插入数据库10万条数据 耗时5秒" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
