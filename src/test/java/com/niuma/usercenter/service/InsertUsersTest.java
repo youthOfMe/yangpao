@@ -11,6 +11,7 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @SpringBootTest
 public class InsertUsersTest {
@@ -78,8 +79,47 @@ public class InsertUsersTest {
                 }
             }
 
-            userService.saveBatch(userList);
+            userService.saveBatch(userList, 10000);
         }
+        stopWatch.stop();
+        System.out.println(stopWatch.getTotalTimeMillis());
+    }
+
+    @Test
+    public void doThreadPoolInsertUsers() {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        int j = 0;
+        List<CompletableFuture<Void>> futureList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            List<User> userList = new ArrayList<>();
+            while (true) {
+                j++;
+                User user = new User();
+                user.setUsername("牛马洋");
+                user.setUserAccount("fakeniuma");
+                user.setAvatarUrl("https://chenhai-misty-rain-test.oss-cn-beijing.aliyuncs.com/5ed2d23fd474593a3ee433ab73d84aa.jpg");
+                user.setGender(0);
+                user.setUserPassword("d948e8ce556f1de1a3a824bcd86cfa5a");
+                user.setPhone("123");
+                user.setEmail("123");
+                user.setUserStatus(0);
+                user.setUserRole(0);
+                user.setCreateTime(new Date());
+                user.setUpdateTime(new Date());
+                user.setIsDelete(0);
+                user.setPlanetCode("111111");
+                user.setTags("[\"JAVA\", \"GO\"]");
+                if (j % 10000 == 1) {
+                    break;
+                }
+            }
+            CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
+                userService.saveBatch(userList, 10000);
+            });
+            futureList.add(future);
+        }
+        CompletableFuture.allOf(futureList.toArray(new CompletableFuture[]{})).join();
         stopWatch.stop();
         System.out.println(stopWatch.getTotalTimeMillis());
     }
