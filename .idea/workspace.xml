@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="feat: 配置redis的模板序列化器" />
+    <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="feat: 完善根据标签搜索用户接口的service层">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -217,7 +220,9 @@
       <workItem from="1714994574176" duration="109000" />
       <workItem from="1717311505430" duration="2563000" />
       <workItem from="1717375802980" duration="10170000" />
-      <workItem from="1717463258055" duration="5836000" />
+      <workItem from="1717463258055" duration="7913000" />
+      <workItem from="1717548020981" duration="599000" />
+      <workItem from="1717587602811" duration="2199000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 实现使用SQL进行通过标签搜索用户的接口">
       <option name="closed" value="true" />
@@ -299,7 +304,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717507602106</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: 完善根据标签搜索用户接口的service层">
+      <option name="closed" value="true" />
+      <created>1717507932313</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717507932313</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,7 +328,8 @@
     <MESSAGE value="feat: 测试使用线程池优化循环Betch批量插入数据库10万条数据 耗时5秒" />
     <MESSAGE value="feat: 测试使用自定义线程池优化循环Betch批量插入数据库10万条数据 耗时5秒" />
     <MESSAGE value="feat: 配置redis的模板序列化器" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 配置redis的模板序列化器" />
+    <MESSAGE value="feat: 完善根据标签搜索用户接口的service层" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 完善根据标签搜索用户接口的service层" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
