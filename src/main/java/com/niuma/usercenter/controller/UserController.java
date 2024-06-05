@@ -87,7 +87,7 @@ public class UserController {
     @PostMapping("/search")
     public BaseResponse<List<User>> searchUsers(String username, HttpServletRequest request) {
         // 仅管理员可以查询
-        if (!isAdmin(request)) {
+        if (!userService.isAdmin(request)) {
             return ResultUtils.success(new ArrayList<>());
         }
 
@@ -117,7 +117,7 @@ public class UserController {
     @DeleteMapping("/delete")
     public BaseResponse<Boolean> deleteUsers(@RequestBody int id, HttpServletRequest request) {
         // 仅管理员可以删除
-        if (!isAdmin(request)) {
+        if (!userService.isAdmin(request)) {
             return ResultUtils.error(ErrorCode.NOT_AUTH);
         }
 
@@ -174,15 +174,4 @@ public class UserController {
         return ResultUtils.success(userPage);
     }
 
-    /**
-     * 是否为管理员
-     *
-     * @param request
-     * @return
-     */
-    private boolean isAdmin(HttpServletRequest request) {
-        Object userObj = request.getSession().getAttribute(USER_LOGIN_STATE);
-        User user = (User) userObj;
-        return user != null && user.getUserRole() == 1;
-    }
 }

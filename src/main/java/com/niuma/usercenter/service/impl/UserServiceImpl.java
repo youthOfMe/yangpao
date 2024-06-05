@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.niuma.usercenter.common.ErrorCode;
+import com.niuma.usercenter.contant.UserContant;
 import com.niuma.usercenter.exception.BusinessException;
 import com.niuma.usercenter.mapper.UserMapper;
 import com.niuma.usercenter.model.domain.User;
@@ -245,6 +246,30 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
             throw new BusinessException(ErrorCode.NOT_AUTH);
         }
         return (User) userObj;
+    }
+
+    /**
+     * 是否为管理员
+     * @param request
+     * @return
+     */
+    @Override
+    public boolean isAdmin(HttpServletRequest request) {
+        // 仅管理员可以查询
+        Object userObj = request.getSession().getAttribute(USER_LOGIN_STATE);
+        User user = (User) userObj;
+        return user != null && user.getUserRole() == UserContant.ADMIN_ROLE;
+    }
+
+    /**
+     * 是否为管理员
+     * @param loginUser
+     * @return
+     */
+    @Override
+    public boolean isAdmin(User loginUser) {
+        // 仅管理员可以查询
+        return loginUser != null && loginUser.getUserRole() == UserContant.ADMIN_ROLE;
     }
 }
 
