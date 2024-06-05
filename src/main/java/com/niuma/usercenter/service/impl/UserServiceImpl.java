@@ -229,6 +229,23 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
 
         return userList;
     }
+
+    /**
+     * 获取登录用户的信息
+     * @param request
+     * @return
+     */
+    @Override
+    public User getLoginUser(HttpServletRequest request) {
+        if (request == null) {
+            return null;
+        }
+        Object userObj = request.getSession().getAttribute(USER_LOGIN_STATE);
+        if (userObj == null) {
+            throw new BusinessException(ErrorCode.NOT_AUTH);
+        }
+        return (User) userObj;
+    }
 }
 
 
