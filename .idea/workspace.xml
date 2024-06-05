@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="feat: 开启MyBatis-Plus中的SQL日志">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuma/usercenter/config/MybatisPlusConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="feat: 进行配置MybatisPlus的分页拦截器插件">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuma/usercenter/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuma/usercenter/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,10 +173,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.UserCenterApplication" />
+        <item itemvalue="HTTP Request.rest-api_1 | #1" />
         <item itemvalue="JUnit.UserServiceTest.searchUserByTags" />
         <item itemvalue="Spring Boot.UserCenterApplication (1)" />
         <item itemvalue="JUnit.UserServiceTest.userResgister" />
-        <item itemvalue="HTTP Request.rest-api_1 | #1" />
       </list>
     </recent_temporary>
   </component>
@@ -222,7 +221,7 @@
       <workItem from="1717375802980" duration="10170000" />
       <workItem from="1717463258055" duration="7913000" />
       <workItem from="1717548020981" duration="599000" />
-      <workItem from="1717587602811" duration="3254000" />
+      <workItem from="1717587602811" duration="3609000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 实现使用SQL进行通过标签搜索用户的接口">
       <option name="closed" value="true" />
@@ -320,7 +319,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717590077383</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat: 进行配置MybatisPlus的分页拦截器插件">
+      <option name="closed" value="true" />
+      <created>1717591013284</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1717591013284</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,14 +345,15 @@
     <MESSAGE value="feat: 配置redis的模板序列化器" />
     <MESSAGE value="feat: 完善根据标签搜索用户接口的service层" />
     <MESSAGE value="feat: 开启MyBatis-Plus中的SQL日志" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 开启MyBatis-Plus中的SQL日志" />
+    <MESSAGE value="feat: 进行配置MybatisPlus的分页拦截器插件" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 进行配置MybatisPlus的分页拦截器插件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/niuma/usercenter/controller/UserController.java</url>
-          <line>142</line>
+          <line>150</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>

@@ -1,6 +1,7 @@
 package com.niuma.usercenter.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.niuma.usercenter.common.BaseResponse;
 import com.niuma.usercenter.common.ErrorCode;
 import com.niuma.usercenter.common.ResultUtils;
@@ -131,6 +132,16 @@ public class UserController {
         }
         Boolean b = userService.removeById(id);
         return ResultUtils.success(b);
+    }
+
+    @GetMapping("/recommend")
+    public BaseResponse<Page<User>> recommendUsers(long pageSize, long pageNum, HttpServletRequest request) {
+        if (pageSize <= 0 || pageNum <=0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "分页参数错误");
+        }
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        Page<User> userPage = userService.page(new Page<>(pageNum, pageSize), queryWrapper);
+        return ResultUtils.success(userPage);
     }
 
     /**
