@@ -8,10 +8,14 @@ import com.niuma.usercenter.exception.BusinessException;
 import com.niuma.usercenter.model.domain.Team;
 import com.niuma.usercenter.model.domain.User;
 import com.niuma.usercenter.model.domain.UserTeam;
+import com.niuma.usercenter.model.request.TeamUpdateRequest;
 import com.niuma.usercenter.service.TeamService;
 import com.niuma.usercenter.mapper.TeamMapper;
+import com.niuma.usercenter.service.UserService;
 import com.niuma.usercenter.service.UserTeamService;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.poi.ss.formula.functions.T;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,6 +34,9 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team>
 
     @Resource
     private UserTeamService userTeamService;
+
+    @Resource
+    private UserService userService;
 
     @Override
     @Transactional(rollbackFor = Exception.class)
@@ -103,6 +110,42 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team>
         }
 
         return team.getId();
+    }
+
+    /**
+     * 更新队伍
+     * @param teamUpdateRequest
+     * @param loginUser
+     * @return
+     */
+    @Override
+    public boolean updateTeam(TeamUpdateRequest teamUpdateRequest, User loginUser) {
+        if (teamUpdateRequest == null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        Long id = teamUpdateRequest.getId();
+        if (id == null || id <= 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        Team oldTeam = this.getById(id);
+        if (oldTeam == null) {
+            throw new BusinessException(ErrorCode.NULL_ERROR, "队伍不存在");
+        }
+        // 只有队长/管理员可以进行修改队伍信息
+        if (oldTeam.getUserId().equals(loginUser.getId()) && !userService.isAdmin(loginUser)) {
+            throw new BusinessException(ErrorCode.NOT_AUTH);
+        }
+        TeamStatusEnum statusEnum = TeamStatusEnum.getEnumByValue(teamUpdateRequest.getStatus());
+        if (statusEnum.equals(TeamStatusEnum.SECRET)) {
+            if (StringUtils.isBlank(teamUpdateRequest.getPassword())) {
+                throw new BusinessException(ErrorCode.PARAMS_ERROR, "加密房间必须设置密码");
+            }
+        }
+        Team updateTeam = new Team();
+        BeanUtils.copyProperties(teamUpdateRequest, updateTeam);
+        boolean result = this.updateById(updateTeam);
+
+        return result;
     }
 }
 

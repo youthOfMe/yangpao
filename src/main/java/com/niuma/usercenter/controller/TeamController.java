@@ -7,6 +7,7 @@ import com.niuma.usercenter.exception.BusinessException;
 import com.niuma.usercenter.model.domain.Team;
 import com.niuma.usercenter.model.domain.User;
 import com.niuma.usercenter.model.request.TeamAddRequest;
+import com.niuma.usercenter.model.request.TeamUpdateRequest;
 import com.niuma.usercenter.service.TeamService;
 import com.niuma.usercenter.service.UserService;
 import com.sun.org.apache.xpath.internal.operations.Bool;
@@ -47,5 +48,22 @@ public class TeamController {
         return ResultUtils.success(teamId);
     }
 
-    // public BaseResponse<Boolean> updateTeam(@RequestBod)
+    /**
+     * 更新队伍
+     * @param teamUpdateRequest
+     * @param request
+     * @return
+     */
+    @PostMapping("/update")
+    public BaseResponse<Boolean> updateTeam(@RequestBody TeamUpdateRequest teamUpdateRequest, HttpServletRequest request) {
+        if (teamUpdateRequest == null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        User loginUser = userService.getLoginUser(request);
+        boolean result = teamService.updateTeam(teamUpdateRequest, loginUser);
+        if (!result) {
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR, "更新队伍失败");
+        }
+        return ResultUtils.success(result);
+    }
 }
