@@ -12,6 +12,7 @@ import com.niuma.usercenter.service.TeamService;
 import com.niuma.usercenter.service.UserService;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -65,5 +66,22 @@ public class TeamController {
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "更新队伍失败");
         }
         return ResultUtils.success(result);
+    }
+
+    /**
+     * 根据用户ID获取队伍数据
+     * @param id
+     * @return
+     */
+    @GetMapping("/get")
+    public BaseResponse<Team> getTeamById(long id) {
+        if (id <= 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        Team team = teamService.getById(id);
+        if (team == null) {
+            throw new BusinessException(ErrorCode.NULL_ERROR);
+        }
+        return ResultUtils.success(team);
     }
 }
