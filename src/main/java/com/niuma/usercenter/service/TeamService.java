@@ -3,7 +3,11 @@ package com.niuma.usercenter.service;
 import com.niuma.usercenter.model.domain.Team;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.niuma.usercenter.model.domain.User;
+import com.niuma.usercenter.model.dto.TeamQuery;
 import com.niuma.usercenter.model.request.TeamUpdateRequest;
+import com.niuma.usercenter.model.vo.TeamUserVO;
+
+import java.util.List;
 
 /**
 * @author 20406
@@ -27,4 +31,12 @@ public interface TeamService extends IService<Team> {
      * @return
      */
     boolean updateTeam(TeamUpdateRequest teamUpdateRequest, User loginUser);
+
+    /**
+     * 搜索队伍的功能
+     * @param teamQuery
+     * @param isAdmin
+     * @return
+     */
+    List<TeamUserVO> listTeams(TeamQuery teamQuery, boolean isAdmin);
 }

@@ -1,17 +1,20 @@
 package com.niuma.usercenter.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.niuma.usercenter.common.BaseResponse;
 import com.niuma.usercenter.common.ErrorCode;
 import com.niuma.usercenter.common.ResultUtils;
 import com.niuma.usercenter.exception.BusinessException;
 import com.niuma.usercenter.model.domain.Team;
 import com.niuma.usercenter.model.domain.User;
+import com.niuma.usercenter.model.domain.UserTeam;
+import com.niuma.usercenter.model.dto.TeamQuery;
 import com.niuma.usercenter.model.request.TeamAddRequest;
 import com.niuma.usercenter.model.request.TeamUpdateRequest;
 import com.niuma.usercenter.model.vo.TeamUserVO;
 import com.niuma.usercenter.service.TeamService;
 import com.niuma.usercenter.service.UserService;
-import com.sun.org.apache.xpath.internal.operations.Bool;
+import com.niuma.usercenter.service.UserTeamService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.BeanUtils;
@@ -19,7 +22,11 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @CrossOrigin(origins = { "http://localhost:3000" })
 @RestController
@@ -32,6 +39,9 @@ public class TeamController {
 
     @Resource
     private TeamService teamService;
+
+    @Resource
+    private UserTeamService userTeamService;
 
     /**
      * 新增队伍
@@ -87,5 +97,47 @@ public class TeamController {
         return ResultUtils.success(team);
     }
 
-    // public BaseResponse<List<TeamUserVO>> listTeams()
+    /**
+     * 获取到队伍列表
+     * @param teamQuery
+     * @param request
+     * @return
+     */
+    @GetMapping("/list")
+    public BaseResponse<List<TeamUserVO>> listTeams(TeamQuery teamQuery, HttpServletRequest request) {
+        if (teamQuery == null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        // 获取到当前登录用户是否为管理员
+        boolean admin = userService.isAdmin(request);
+        List<TeamUserVO> teamList = teamService.listTeams(teamQuery, admin);
+        // 判断当前用户是否加入了队伍
+        List<Long> teamIdList = teamList.stream().map(TeamUserVO::getId).collect(Collectors.toList());
+        QueryWrapper<UserTeam> userTeamQueryWrapper = new QueryWrapper<>();
+        // 为什么进行使用 try - catch语句 因为有人是没有进行登录的
+        try {
+            User loginUser = userService.getLoginUser(request);
+            userTeamQueryWrapper.eq("userId", loginUser.getId());
+            userTeamQueryWrapper.in("teamId", teamIdList);
+            List<UserTeam> userTeamList = userTeamService.list(userTeamQueryWrapper);
+            // 已加入的队伍的ID集合
+            Set<Long> hasJoinTeamIdSet = userTeamList.stream().map(UserTeam::getTeamId).collect(Collectors.toSet());
+            teamList.forEach(team -> {
+                boolean hasJoin = hasJoinTeamIdSet.contains(team.getId());
+                team.setHasJoin(hasJoin);
+            });
+        } catch (Exception e) {
+
+        }
+        // 查询队伍中用户的信息
+        QueryWrapper<UserTeam> userTeamJoinQueryWrapper = new QueryWrapper<>();
+        userTeamJoinQueryWrapper.in("teamId", teamIdList);
+        List<UserTeam> userTeamList = userTeamService.list(userTeamJoinQueryWrapper);
+        // 组合Map 队伍ID => 加入这个队伍的用户列表
+        Map<Long, List<UserTeam>> teamIdUserTeamList = userTeamList.stream().collect(Collectors.groupingBy(UserTeam::getTeamId));
+        teamList.forEach(team -> {
+            team.setHasJoinNum(teamIdUserTeamList.getOrDefault(team.getId(), new ArrayList<>()).size());
+        });
+        return ResultUtils.success(teamList);
+    }
 }

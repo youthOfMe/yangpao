@@ -60,6 +60,7 @@ public class Team implements Serializable {
     /**
      * 创建时间
      */
+    @TableField(value = "createTime")
     private Date createTime;
 
     /**
