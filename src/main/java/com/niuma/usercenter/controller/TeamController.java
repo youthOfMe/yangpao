@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @CrossOrigin(origins = { "http://localhost:3000" })
 @RestController
@@ -84,4 +85,6 @@ public class TeamController {
         }
         return ResultUtils.success(team);
     }
+
+    // public BaseResponse<List<>>
 }
