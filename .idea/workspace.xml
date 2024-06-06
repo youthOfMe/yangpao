@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="feat: 生成Team组队的相关代码">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuma/usercenter/controller/TeamController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuma/usercenter/model/request/TeamAddRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="feat: 完善添加队伍的功能" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +17,7 @@
         <option value="Interface" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -229,6 +226,7 @@
       <workItem from="1717548020981" duration="599000" />
       <workItem from="1717587602811" duration="9773000" />
       <workItem from="1717633510715" duration="181000" />
+      <workItem from="1717679371140" duration="3070000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 实现使用SQL进行通过标签搜索用户的接口">
       <option name="closed" value="true" />
@@ -366,7 +364,31 @@
       <option name="project" value="LOCAL" />
       <updated>1717598719486</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="feat: 完成封装队伍状态枚举类">
+      <option name="closed" value="true" />
+      <created>1717680465039</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1717680465039</updated>
+    </task>
+    <task id="LOCAL-00019" summary="feat: 生成UserTeam关系表的相关代码">
+      <option name="closed" value="true" />
+      <created>1717681905386</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1717681905386</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat: 完善添加队伍的功能">
+      <option name="closed" value="true" />
+      <created>1717682386566</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1717682386566</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,6 +411,20 @@
     <MESSAGE value="feat: 进行使用Redis进行缓存数据，加速推荐接口的响应速度" />
     <MESSAGE value="feat: 进行封装配置好通用方法到service中isAdmin判断是否为管理员" />
     <MESSAGE value="feat: 生成Team组队的相关代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 生成Team组队的相关代码" />
+    <MESSAGE value="feat: 完成封装队伍状态枚举类" />
+    <MESSAGE value="feat: 生成UserTeam关系表的相关代码" />
+    <MESSAGE value="feat: 完善添加队伍的功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 完善添加队伍的功能" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/niuma/usercenter/service/impl/TeamServiceImpl.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

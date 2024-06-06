@@ -9,6 +9,7 @@ import com.niuma.usercenter.model.domain.User;
 import com.niuma.usercenter.model.request.TeamAddRequest;
 import com.niuma.usercenter.service.TeamService;
 import com.niuma.usercenter.service.UserService;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +29,12 @@ public class TeamController {
     @Resource
     private TeamService teamService;
 
+    /**
+     * 新增队伍
+     * @param teamAddRequest
+     * @param request
+     * @return
+     */
     @PostMapping("/add")
     public BaseResponse<Long> addTeam(@RequestBody TeamAddRequest teamAddRequest, HttpServletRequest request) {
         if (teamAddRequest == null) {
@@ -40,4 +47,5 @@ public class TeamController {
         return ResultUtils.success(teamId);
     }
 
+    // public BaseResponse<Boolean> updateTeam(@RequestBod)
 }
