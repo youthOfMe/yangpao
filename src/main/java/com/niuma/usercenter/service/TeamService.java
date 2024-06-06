@@ -2,6 +2,7 @@ package com.niuma.usercenter.service;
 
 import com.niuma.usercenter.model.domain.Team;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.niuma.usercenter.model.domain.User;
 
 /**
 * @author 20406
@@ -10,4 +11,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface TeamService extends IService<Team> {
 
+    /**
+     * 创建队伍
+     * @param team 队伍请求体参数
+     * @param loginUser 登录用户
+     * @return
+     */
+    long addTeam(Team team, User loginUser);
 }
