@@ -8,6 +8,7 @@ import com.niuma.usercenter.model.domain.Team;
 import com.niuma.usercenter.model.domain.User;
 import com.niuma.usercenter.model.request.TeamAddRequest;
 import com.niuma.usercenter.model.request.TeamUpdateRequest;
+import com.niuma.usercenter.model.vo.TeamUserVO;
 import com.niuma.usercenter.service.TeamService;
 import com.niuma.usercenter.service.UserService;
 import com.sun.org.apache.xpath.internal.operations.Bool;
@@ -86,5 +87,5 @@ public class TeamController {
         return ResultUtils.success(team);
     }
 
-    // public BaseResponse<List<>>
+    // public BaseResponse<List<TeamUserVO>> listTeams()
 }
