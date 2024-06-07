@@ -135,7 +135,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-<!--                    <mainClass>com.niuma.usercenter.UserCenterApplication</mainClass>-->
+<!--                    <mainClass>com.niuma.yangpao.UserCenterApplication</mainClass>-->
 <!--                    <skip>true</skip>-->
                 </configuration>
                 <executions>
