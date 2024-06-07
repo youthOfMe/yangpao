@@ -3,12 +3,14 @@ package com.niuma.yangpao.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.niuma.yangpao.common.ErrorCode;
+import com.niuma.yangpao.common.PageRequest;
 import com.niuma.yangpao.enums.TeamStatusEnum;
 import com.niuma.yangpao.exception.BusinessException;
 import com.niuma.yangpao.model.domain.Team;
 import com.niuma.yangpao.model.domain.User;
 import com.niuma.yangpao.model.domain.UserTeam;
 import com.niuma.yangpao.model.dto.TeamQuery;
+import com.niuma.yangpao.model.request.TeamJoinRequest;
 import com.niuma.yangpao.model.request.TeamUpdateRequest;
 import com.niuma.yangpao.model.vo.TeamUserVO;
 import com.niuma.yangpao.service.TeamService;
@@ -22,6 +24,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -41,6 +44,22 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team>
 
     @Resource
     private UserService userService;
+
+    /**
+     * 根据ID获取队伍信息
+     * @param teamId
+     * @return
+     */
+    private Team getTeamById(Long teamId) {
+        if (teamId == null || teamId <= 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        Team team = this.getTeamById(teamId);
+        if (team == null) {
+            throw new BusinessException(ErrorCode.NULL_ERROR, "队伍不存在");
+        }
+        return team;
+    }
 
     @Override
     @Transactional(rollbackFor = Exception.class)
@@ -231,6 +250,24 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team>
         }
 
         return teamUserVOList;
+    }
+
+    /**
+     * 加入队伍
+     * @param teamJoinRequest
+     * @param loginUser
+     * @return
+     */
+    @Override
+    public boolean joinTeam(TeamJoinRequest teamJoinRequest, User loginUser) {
+        if (teamJoinRequest == null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        Long teamId = teamJoinRequest.getTeamId();
+
+        // this.getTeam
+
+        return false;
     }
 }
 
