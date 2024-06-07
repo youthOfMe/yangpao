@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="feat: 封装请求队伍列表DTO参数类 封装通用分页类">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="feat: 封装根据ID获取队伍信息的方法">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/service/impl/TeamServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/service/impl/TeamServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,12 +116,12 @@
       <module name="user-center" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.niuma.usercenter.service.*" />
+          <option name="PATTERN" value="com.niuma.yangpao.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.niuma.usercenter.service" />
-      <option name="MAIN_CLASS_NAME" value="com.niuma.usercenter.service.UserServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.niuma.yangpao.service.UserServiceTest" />
       <option name="METHOD_NAME" value="searchUserByTags" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -133,12 +132,12 @@
       <module name="user-center" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.niuma.usercenter.service.*" />
+          <option name="PATTERN" value="com.niuma.yangpao.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.niuma.usercenter.service" />
-      <option name="MAIN_CLASS_NAME" value="com.niuma.usercenter.service.UserServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.niuma.yangpao.service.UserServiceTest" />
       <option name="METHOD_NAME" value="userResgister" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -161,10 +160,24 @@
     </configuration>
     <configuration name="UserCenterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="user-center" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.niuma.usercenter.UserCenterApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.niuma.yangpao.UserCenterApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.niuma.usercenter.*" />
+          <option name="PATTERN" value="com.niuma.yangpao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserCenterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="user-center" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.niuma.yangpao.UserCenterApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niuma.yangpao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -233,7 +246,7 @@
       <workItem from="1717587602811" duration="9773000" />
       <workItem from="1717633510715" duration="181000" />
       <workItem from="1717679371140" duration="8450000" />
-      <workItem from="1717720486658" duration="1797000" />
+      <workItem from="1717720486658" duration="6274000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 实现使用SQL进行通过标签搜索用户的接口">
       <option name="closed" value="true" />
@@ -435,15 +448,37 @@
       <option name="project" value="LOCAL" />
       <updated>1717684791188</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="feat: 重塑项目包 完成分页查询数据">
+      <option name="closed" value="true" />
+      <created>1717771109078</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1717771109078</updated>
+    </task>
+    <task id="LOCAL-00027" summary="feat: 封装加入队伍的请求体">
+      <option name="closed" value="true" />
+      <created>1717771320953</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1717771320954</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat: 封装根据ID获取队伍信息的方法">
+      <option name="closed" value="true" />
+      <created>1717771777145</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1717771777145</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: 实现使用SQL进行通过标签搜索用户的接口" />
-    <MESSAGE value="feat: 实现使用内存进行根据用户标签搜索用户" />
     <MESSAGE value="feat: 解决前端跨域问题" />
     <MESSAGE value="feat: 使用redis实现session分布式登录" />
     <MESSAGE value="feat: 测试普通循环insert插入数据库10万条数据 耗时55秒" />
@@ -466,13 +501,16 @@
     <MESSAGE value="feat: 完善根据用户ID获取队伍数据" />
     <MESSAGE value="feat: 封装获取队伍列表封装VO" />
     <MESSAGE value="feat: 封装请求队伍列表DTO参数类 封装通用分页类" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 封装请求队伍列表DTO参数类 封装通用分页类" />
+    <MESSAGE value="feat: 重塑项目包 完成分页查询数据" />
+    <MESSAGE value="feat: 封装加入队伍的请求体" />
+    <MESSAGE value="feat: 封装根据ID获取队伍信息的方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 封装根据ID获取队伍信息的方法" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/niuma/usercenter/service/impl/TeamServiceImpl.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/niuma/yangpao/service/impl/TeamServiceImpl.java</url>
           <line>50</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
