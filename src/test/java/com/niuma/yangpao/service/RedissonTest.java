@@ -21,7 +21,7 @@ public class RedissonTest {
         RLock lock = redissonClient.getLock("yangpao:precachejob:docache:lock");
 
         try {
-            // 只有一个线程考研获得锁
+            // 只有一个线程可以获得锁
             if (lock.tryLock(0, -1, TimeUnit.MILLISECONDS)) {
                 Thread.sleep(3000000);
                 System.out.println("getLock: " + Thread.currentThread().getId());
