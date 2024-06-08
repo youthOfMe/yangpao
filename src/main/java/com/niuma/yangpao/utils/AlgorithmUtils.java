@@ -1,5 +1,6 @@
 package com.niuma.yangpao.utils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AlgorithmUtils {
@@ -43,6 +44,12 @@ public class AlgorithmUtils {
     }
 
     public static int minDistance(List<String> tagList1, List<String> tagList2){
+        if (tagList1 == null) {
+            tagList1 = new ArrayList<>();
+        }
+        if (tagList2 == null) {
+            tagList2 = new ArrayList<>();
+        }
         int n = tagList1.size();
         int m = tagList2.size();
 
