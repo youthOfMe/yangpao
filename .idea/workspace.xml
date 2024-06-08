@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="feat: 引入编辑距离算法工具类">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/niuma/yangpao/service/AlgnorithmUtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/utils/AlgorithmUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/utils/AlgorithmUtils.java" afterDir="false" />
+    <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="feat: 测试编辑距离算法">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +110,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AlgnorithmUtilsTest.testCompareTags">
+  <component name="RunManager" selected="Spring Boot.UserCenterApplication">
     <configuration name="rest-api_1 | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http" requestIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -198,9 +198,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.UserCenterApplication" />
         <item itemvalue="JUnit.AlgnorithmUtilsTest.testCompareTags" />
         <item itemvalue="JUnit.AlgnorithmUtilsTest.test" />
-        <item itemvalue="Spring Boot.UserCenterApplication" />
         <item itemvalue="JUnit.RedissonTest.testWatchDog" />
         <item itemvalue="HTTP Request.rest-api_1 | #1" />
       </list>
@@ -251,7 +251,7 @@
       <workItem from="1717633510715" duration="181000" />
       <workItem from="1717679371140" duration="8450000" />
       <workItem from="1717720486658" duration="6274000" />
-      <workItem from="1717810344097" duration="12549000" />
+      <workItem from="1717810344097" duration="14964000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 实现使用SQL进行通过标签搜索用户的接口">
       <option name="closed" value="true" />
@@ -549,14 +549,21 @@
       <option name="project" value="LOCAL" />
       <updated>1717824863938</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="feat: 测试编辑距离算法">
+      <option name="closed" value="true" />
+      <created>1717826782935</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1717826782935</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: 进行配置MybatisPlus的分页拦截器插件" />
     <MESSAGE value="feat: 进行实现优化前的分页获取推荐伙伴列表" />
     <MESSAGE value="feat: 进行使用Redis进行缓存数据，加速推荐接口的响应速度" />
     <MESSAGE value="feat: 进行封装配置好通用方法到service中isAdmin判断是否为管理员" />
@@ -581,7 +588,8 @@
     <MESSAGE value="feat: 实现使用定时任务配合redis分布式锁实现定时对重点用户进行缓存数据" />
     <MESSAGE value="feat: 修复已知BUG" />
     <MESSAGE value="feat: 引入编辑距离算法工具类" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 引入编辑距离算法工具类" />
+    <MESSAGE value="feat: 测试编辑距离算法" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 测试编辑距离算法" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

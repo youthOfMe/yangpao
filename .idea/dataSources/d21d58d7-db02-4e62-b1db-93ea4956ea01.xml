@@ -868,8 +868,8 @@
     </schema>
     <schema id="275" parent="1" name="chenhai">
       <Current>1</Current>
-      <IntrospectionTimestamp>2024-06-06.06:39:02</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2024-06-05.14:39:02</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2024-06-08.22:51:59</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2024-06-08.06:51:59</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="276" parent="1" name="cloud_order">
@@ -1055,7 +1055,7 @@
       <UnderlyingIndexName>uniidx_tagName</UnderlyingIndexName>
     </key>
     <column id="321" parent="305" name="id">
-      <AutoIncrement>12</AutoIncrement>
+      <AutoIncrement>14</AutoIncrement>
       <Comment>id</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -1224,58 +1224,62 @@
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="350" parent="306" name="PRIMARY">
+    <index id="350" parent="306" name="user_userAccount_index">
+      <ColNames>userAccount</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="351" parent="306" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="351" parent="307" name="id">
-      <AutoIncrement>7</AutoIncrement>
+    <column id="352" parent="307" name="id">
+      <AutoIncrement>15</AutoIncrement>
       <Comment>id</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="352" parent="307" name="userId">
+    <column id="353" parent="307" name="userId">
       <Comment>用户id</Comment>
       <DasType>bigint|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="353" parent="307" name="teamId">
+    <column id="354" parent="307" name="teamId">
       <Comment>队伍id</Comment>
       <DasType>bigint|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="354" parent="307" name="joinTime">
+    <column id="355" parent="307" name="joinTime">
       <Comment>加入时间</Comment>
       <DasType>datetime|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="355" parent="307" name="createTime">
+    <column id="356" parent="307" name="createTime">
       <Comment>创建时间</Comment>
       <DasType>datetime|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <Position>5</Position>
     </column>
-    <column id="356" parent="307" name="updateTime">
+    <column id="357" parent="307" name="updateTime">
       <DasType>datetime|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
       <Position>6</Position>
     </column>
-    <column id="357" parent="307" name="isDelete">
+    <column id="358" parent="307" name="isDelete">
       <Comment>是否删除</Comment>
       <DasType>tinyint|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <index id="358" parent="307" name="PRIMARY">
+    <index id="359" parent="307" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="359" parent="307" name="PRIMARY">
+    <key id="360" parent="307" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
