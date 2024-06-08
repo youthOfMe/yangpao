@@ -18,15 +18,12 @@ import com.niuma.yangpao.model.vo.TeamUserVO;
 import com.niuma.yangpao.service.TeamService;
 import com.niuma.yangpao.service.UserService;
 import com.niuma.yangpao.service.UserTeamService;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.nio.channels.Pipe;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

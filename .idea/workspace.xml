@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="feat: 完善获取我加入的队伍的方法">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/config/RedissonConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="feat: 引入redisson并进行配置redisson">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/niuma/yangpao/service/RedissonTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,9 +108,25 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserCenterApplication">
+  <component name="RunManager" selected="JUnit.RedissonTest.testWatchDog">
     <configuration name="rest-api_1 | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http" requestIdentifier="#1" runType="Run single request">
       <method v="2" />
+    </configuration>
+    <configuration name="RedissonTest.testWatchDog" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="yangpao" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niuma.yangpao.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.niuma.yangpao.service" />
+      <option name="MAIN_CLASS_NAME" value="com.niuma.yangpao.service.RedissonTest" />
+      <option name="METHOD_NAME" value="testWatchDog" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="UserServiceTest.searchUserByTags" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="user-center" />
@@ -125,22 +139,6 @@
       <option name="PACKAGE_NAME" value="com.niuma.usercenter.service" />
       <option name="MAIN_CLASS_NAME" value="com.niuma.yangpao.service.UserServiceTest" />
       <option name="METHOD_NAME" value="searchUserByTags" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceTest.userResgister" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="user-center" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.niuma.yangpao.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.niuma.usercenter.service" />
-      <option name="MAIN_CLASS_NAME" value="com.niuma.yangpao.service.UserServiceTest" />
-      <option name="METHOD_NAME" value="userResgister" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -189,18 +187,18 @@
     </configuration>
     <list>
       <item itemvalue="HTTP Request.rest-api_1 | #1" />
+      <item itemvalue="JUnit.RedissonTest.testWatchDog" />
       <item itemvalue="JUnit.UserServiceTest.searchUserByTags" />
-      <item itemvalue="JUnit.UserServiceTest.userResgister" />
       <item itemvalue="Spring Boot.UserCenterApplication" />
       <item itemvalue="Spring Boot.UserCenterApplication (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RedissonTest.testWatchDog" />
         <item itemvalue="Spring Boot.UserCenterApplication" />
         <item itemvalue="HTTP Request.rest-api_1 | #1" />
         <item itemvalue="JUnit.UserServiceTest.searchUserByTags" />
         <item itemvalue="Spring Boot.UserCenterApplication (1)" />
-        <item itemvalue="JUnit.UserServiceTest.userResgister" />
       </list>
     </recent_temporary>
   </component>
@@ -249,7 +247,7 @@
       <workItem from="1717633510715" duration="181000" />
       <workItem from="1717679371140" duration="8450000" />
       <workItem from="1717720486658" duration="6274000" />
-      <workItem from="1717810344097" duration="7644000" />
+      <workItem from="1717810344097" duration="8325000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 实现使用SQL进行通过标签搜索用户的接口">
       <option name="closed" value="true" />
@@ -507,14 +505,21 @@
       <option name="project" value="LOCAL" />
       <updated>1717814838861</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="feat: 引入redisson并进行配置redisson">
+      <option name="closed" value="true" />
+      <created>1717820878357</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1717820878357</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: 测试使用线程池优化循环Betch批量插入数据库10万条数据 耗时5秒" />
     <MESSAGE value="feat: 测试使用自定义线程池优化循环Betch批量插入数据库10万条数据 耗时5秒" />
     <MESSAGE value="feat: 配置redis的模板序列化器" />
     <MESSAGE value="feat: 完善根据标签搜索用户接口的service层" />
@@ -539,7 +544,8 @@
     <MESSAGE value="feat: 完善解散队伍的方法" />
     <MESSAGE value="feat: 完善获取我创建的队伍的方法" />
     <MESSAGE value="feat: 完善获取我加入的队伍的方法" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 完善获取我加入的队伍的方法" />
+    <MESSAGE value="feat: 引入redisson并进行配置redisson" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 引入redisson并进行配置redisson" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
