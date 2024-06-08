@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="feat: 进行校验看门狗机制">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/task/PreCacheJob.java" afterDir="false" />
+    <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="feat: 引入编辑距离算法工具类">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/niuma/yangpao/service/AlgnorithmUtilsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/UserCenterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/UserCenterApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/niuma/yangpao/service/RedissonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niuma/yangpao/service/RedissonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/utils/AlgorithmUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/utils/AlgorithmUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,9 +110,41 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserCenterApplication">
+  <component name="RunManager" selected="JUnit.AlgnorithmUtilsTest.testCompareTags">
     <configuration name="rest-api_1 | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http" requestIdentifier="#1" runType="Run single request">
       <method v="2" />
+    </configuration>
+    <configuration name="AlgnorithmUtilsTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="yangpao" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niuma.yangpao.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.niuma.yangpao.service" />
+      <option name="MAIN_CLASS_NAME" value="com.niuma.yangpao.service.AlgnorithmUtilsTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AlgnorithmUtilsTest.testCompareTags" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="yangpao" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niuma.yangpao.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.niuma.yangpao.service" />
+      <option name="MAIN_CLASS_NAME" value="com.niuma.yangpao.service.AlgnorithmUtilsTest" />
+      <option name="METHOD_NAME" value="testCompareTags" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="RedissonTest.testWatchDog" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="yangpao" />
@@ -127,36 +158,6 @@
       <option name="MAIN_CLASS_NAME" value="com.niuma.yangpao.service.RedissonTest" />
       <option name="METHOD_NAME" value="testWatchDog" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceTest.searchUserByTags" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="user-center" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.niuma.yangpao.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.niuma.usercenter.service" />
-      <option name="MAIN_CLASS_NAME" value="com.niuma.yangpao.service.UserServiceTest" />
-      <option name="METHOD_NAME" value="searchUserByTags" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserCenterApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="user-center" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.niuma.usercenter.UserCenterApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.niuma.usercenter.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -190,18 +191,18 @@
     </configuration>
     <list>
       <item itemvalue="HTTP Request.rest-api_1 | #1" />
+      <item itemvalue="JUnit.AlgnorithmUtilsTest.test" />
+      <item itemvalue="JUnit.AlgnorithmUtilsTest.testCompareTags" />
       <item itemvalue="JUnit.RedissonTest.testWatchDog" />
-      <item itemvalue="JUnit.UserServiceTest.searchUserByTags" />
       <item itemvalue="Spring Boot.UserCenterApplication" />
-      <item itemvalue="Spring Boot.UserCenterApplication (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AlgnorithmUtilsTest.testCompareTags" />
+        <item itemvalue="JUnit.AlgnorithmUtilsTest.test" />
         <item itemvalue="Spring Boot.UserCenterApplication" />
         <item itemvalue="JUnit.RedissonTest.testWatchDog" />
         <item itemvalue="HTTP Request.rest-api_1 | #1" />
-        <item itemvalue="JUnit.UserServiceTest.searchUserByTags" />
-        <item itemvalue="Spring Boot.UserCenterApplication (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -250,7 +251,7 @@
       <workItem from="1717633510715" duration="181000" />
       <workItem from="1717679371140" duration="8450000" />
       <workItem from="1717720486658" duration="6274000" />
-      <workItem from="1717810344097" duration="11016000" />
+      <workItem from="1717810344097" duration="12549000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 实现使用SQL进行通过标签搜索用户的接口">
       <option name="closed" value="true" />
@@ -524,16 +525,37 @@
       <option name="project" value="LOCAL" />
       <updated>1717821655021</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="feat: 实现使用定时任务配合redis分布式锁实现定时对重点用户进行缓存数据">
+      <option name="closed" value="true" />
+      <created>1717824264726</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1717824264726</updated>
+    </task>
+    <task id="LOCAL-00036" summary="feat: 修复已知BUG">
+      <option name="closed" value="true" />
+      <created>1717824548713</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1717824548713</updated>
+    </task>
+    <task id="LOCAL-00037" summary="feat: 引入编辑距离算法工具类">
+      <option name="closed" value="true" />
+      <created>1717824863938</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1717824863938</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: 配置redis的模板序列化器" />
-    <MESSAGE value="feat: 完善根据标签搜索用户接口的service层" />
-    <MESSAGE value="feat: 开启MyBatis-Plus中的SQL日志" />
     <MESSAGE value="feat: 进行配置MybatisPlus的分页拦截器插件" />
     <MESSAGE value="feat: 进行实现优化前的分页获取推荐伙伴列表" />
     <MESSAGE value="feat: 进行使用Redis进行缓存数据，加速推荐接口的响应速度" />
@@ -556,7 +578,10 @@
     <MESSAGE value="feat: 完善获取我加入的队伍的方法" />
     <MESSAGE value="feat: 引入redisson并进行配置redisson" />
     <MESSAGE value="feat: 进行校验看门狗机制" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 进行校验看门狗机制" />
+    <MESSAGE value="feat: 实现使用定时任务配合redis分布式锁实现定时对重点用户进行缓存数据" />
+    <MESSAGE value="feat: 修复已知BUG" />
+    <MESSAGE value="feat: 引入编辑距离算法工具类" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 引入编辑距离算法工具类" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

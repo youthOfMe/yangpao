@@ -2,7 +2,7 @@ package com.niuma.yangpao.utils;
 
 import java.util.List;
 
-public class AlgorithmUtil {
+public class AlgorithmUtils {
 
     /**
      * 编辑距离算法(用于计算最相似的两个字符串)
