@@ -388,6 +388,34 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team>
         return userTeamService.remove(queryWrapper);
     }
 
+    /**
+     * 解散队伍
+     * @param id
+     * @param loginUser
+     * @return
+     */
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public boolean deleteTeam(long id, User loginUser) {
+        // 1. 校验队伍是否存在
+        Team team = getTeamById(id);
+        Long teamId = team.getId();
+        // 2. 校验你是不是队长
+        if (team.getUserId().equals(loginUser.getId())) {
+            throw new BusinessException(ErrorCode.FORBIDDEN, "无访问权限");
+        }
+        // 3. 移除所有加入队伍的关联关系
+        QueryWrapper<UserTeam> userTeamQueryWrapper = new QueryWrapper<>();
+        userTeamQueryWrapper.eq("teamId", teamId);
+        boolean result = userTeamService.remove(userTeamQueryWrapper);
+        if (!result) {
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR, "删除队伍关联信息失败");
+        }
+
+        // 5. 删除队伍
+        return this.removeById(teamId);
+    }
+
 
 }
 
