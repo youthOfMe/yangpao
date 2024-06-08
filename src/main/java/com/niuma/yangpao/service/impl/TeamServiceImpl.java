@@ -12,6 +12,7 @@ import com.niuma.yangpao.model.domain.User;
 import com.niuma.yangpao.model.domain.UserTeam;
 import com.niuma.yangpao.model.dto.TeamQuery;
 import com.niuma.yangpao.model.request.TeamJoinRequest;
+import com.niuma.yangpao.model.request.TeamQuitRequest;
 import com.niuma.yangpao.model.request.TeamUpdateRequest;
 import com.niuma.yangpao.model.vo.TeamUserVO;
 import com.niuma.yangpao.service.TeamService;
@@ -329,7 +330,64 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team>
         return save;
     }
 
-    // public boolean quitTeam()
+    /**
+     * 退出队伍
+     * @param teamQuitRequest
+     * @param loginUser
+     * @return
+     */
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public boolean quitTeam(TeamQuitRequest teamQuitRequest, User loginUser) {
+        if (teamQuitRequest == null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        Long teamId = teamQuitRequest.getTeamId();
+        Team team = this.getTeamById(teamId);
+        Long userId = loginUser.getId();
+        UserTeam queryUserTeam = new UserTeam();
+        queryUserTeam.setTeamId(teamId);
+        queryUserTeam.setUserId(userId);
+        QueryWrapper<UserTeam> queryWrapper = new QueryWrapper<>(queryUserTeam);
+        long count = userTeamService.count(queryWrapper);
+        if (count == 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "未加入该队伍");
+        }
+        long teamHasJoinNum = this.countTeamUserByTeamId(teamId);
+        // 队伍只剩一个人, 解散
+        if (teamHasJoinNum == 1) {
+            // 删除队伍和所有加入队伍的关系表数据
+            this.removeById(teamId);
+        } else {
+            // 是否为队长
+            // 是队长
+            if (team.getUserId().equals(userId)) {
+                // 把队伍转移给最早加入的用户
+                // 1. 查询已经加入队伍的人和所有加入的时间
+                QueryWrapper<UserTeam> userTeamQueryWrapper = new QueryWrapper<>();
+                userTeamQueryWrapper.eq("teamId", teamId);
+                userTeamQueryWrapper.last("order by id asc limit 2");
+                List<UserTeam> userTeamList = userTeamService.list(userTeamQueryWrapper);
+                if (CollectionUtils.isEmpty(userTeamList) || userTeamList.size() <= 1) {
+                    throw new BusinessException(ErrorCode.SYSTEM_ERROR);
+                }
+                UserTeam nextUserTeam = userTeamList.get(1);
+                Long nextTeamLeaderId = nextUserTeam.getUserId();
+                // 更新当前队伍的队长
+                Team updateTeam = new Team();
+                updateTeam.setId(teamId);
+                updateTeam.setUserId(nextTeamLeaderId);
+                boolean result = this.updateById(updateTeam);
+                if (!result) {
+                    throw new BusinessException(ErrorCode.SYSTEM_ERROR, "更新队长失败");
+                }
+            }
+        }
+
+        // 移除关系
+        return userTeamService.remove(queryWrapper);
+    }
+
 
 }
 

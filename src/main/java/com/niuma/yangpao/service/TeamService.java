@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.niuma.yangpao.model.domain.User;
 import com.niuma.yangpao.model.dto.TeamQuery;
 import com.niuma.yangpao.model.request.TeamJoinRequest;
+import com.niuma.yangpao.model.request.TeamQuitRequest;
 import com.niuma.yangpao.model.request.TeamUpdateRequest;
 import com.niuma.yangpao.model.vo.TeamUserVO;
 
@@ -48,4 +49,12 @@ public interface TeamService extends IService<Team> {
      * @return
      */
     boolean joinTeam(TeamJoinRequest teamJoinRequest, User loginUser);
+
+    /**
+     * 退出队伍
+     * @param teamQuitRequest
+     * @param loginUser
+     * @return
+     */
+    boolean quitTeam(TeamQuitRequest teamQuitRequest, User loginUser);
 }

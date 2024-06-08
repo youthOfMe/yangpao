@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0722e353-7bf2-4c0b-9194-b60e4cee60e3" name="Changes" comment="feat: 封装根据ID获取队伍信息的方法">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/controller/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/controller/TeamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/service/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/service/TeamService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/service/impl/TeamServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niuma/yangpao/service/impl/TeamServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -247,6 +250,7 @@
       <workItem from="1717633510715" duration="181000" />
       <workItem from="1717679371140" duration="8450000" />
       <workItem from="1717720486658" duration="6274000" />
+      <workItem from="1717810344097" duration="1440000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 实现使用SQL进行通过标签搜索用户的接口">
       <option name="closed" value="true" />
@@ -511,7 +515,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/niuma/yangpao/service/impl/TeamServiceImpl.java</url>
-          <line>50</line>
+          <line>51</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

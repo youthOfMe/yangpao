@@ -12,11 +12,13 @@ import com.niuma.yangpao.model.domain.UserTeam;
 import com.niuma.yangpao.model.dto.TeamQuery;
 import com.niuma.yangpao.model.request.TeamAddRequest;
 import com.niuma.yangpao.model.request.TeamJoinRequest;
+import com.niuma.yangpao.model.request.TeamQuitRequest;
 import com.niuma.yangpao.model.request.TeamUpdateRequest;
 import com.niuma.yangpao.model.vo.TeamUserVO;
 import com.niuma.yangpao.service.TeamService;
 import com.niuma.yangpao.service.UserService;
 import com.niuma.yangpao.service.UserTeamService;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.BeanUtils;
@@ -175,6 +177,22 @@ public class TeamController {
         }
         User loginUser = userService.getLoginUser(request);
         boolean result = teamService.joinTeam(teamJoinRequest, loginUser);
+        return ResultUtils.success(result);
+    }
+
+    /**
+     * 退出队伍
+     * @param teamQuitRequest
+     * @param request
+     * @return
+     */
+    @PostMapping("/quit")
+    public BaseResponse<Boolean> quitTeam(@RequestBody TeamQuitRequest teamQuitRequest, HttpServletRequest request) {
+        if (teamQuitRequest == null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        User loginUser = userService.getLoginUser(request);
+        boolean result = teamService.quitTeam(teamQuitRequest, loginUser);
         return ResultUtils.success(result);
     }
 }
